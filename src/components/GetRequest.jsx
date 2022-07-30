@@ -2,7 +2,6 @@ import React , {useEffect , useState} from 'react'
 import Button from "./Button";
 import Card from "./Card";
 import {getUsers} from '../api/requests'
-import axios from "axios";
 
 const GetRequest = ({usersRef,created}) => {
 
