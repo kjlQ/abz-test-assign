@@ -16,6 +16,7 @@ export function getUsers(apiPage,setIsLoading,setStatus) {
         setIsLoading(false)
     }
 }
+
 export function getPos_token(data,status,setPositions,setToken) {
     try {
         const fetchData = async () => {
@@ -31,3 +32,30 @@ export function getPos_token(data,status,setPositions,setToken) {
     }
 }
 
+const getFormDate = (position_id , name, email, phone, photo) => {
+    const formData = new FormData()
+    formData.append("position_id",position_id)
+    formData.append("name", name)
+    formData.append("email", email)
+    formData.append("phone", phone)
+    {photo[0].size  < 5000000?
+        formData.append("photo", photo[0])
+        :
+        alert('Image size should be less than 5MB ')
+    }
+    return formData
+}
+
+export async function onSubmitHandler({position_id , name, email, phone, photo , setCreated , token}) {
+    const formData = getFormDate(position_id , name, email, phone, photo)
+    const postResponse = await fetch(
+        "https://frontend-test-assignment-api.abz.agency/api/v1/users",
+        {
+            method: "POST",
+            body: formData,
+            headers: { Token: token },
+        }
+    )
+    {postResponse.ok && setCreated(true)}
+    return await postResponse.json()
+}

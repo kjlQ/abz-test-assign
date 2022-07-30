@@ -1,0 +1,18 @@
+.error {
+  position: absolute;
+  top: 54px;
+  left: 17px;
+  color: #CB3D40;
+  &__position{
+    top: 127px;
+  }
+  &__image{
+    top: 243px;
+  }
+  &__has {
+    border: 2px solid #CB3D40 !important;
+    ~span {
+      color: #CB3D40 !important;
+    }
+  }
+}

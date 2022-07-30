@@ -1,0 +1,180 @@
+.request {
+  margin: 140px 0 0;
+  h1 {
+    margin: 0 0 50px;
+    text-align: center;
+    font-size: 40px;
+    @include mobile-m {
+      margin: 0 auto 50px;
+      width: 93%;
+    }
+  }
+  .created {
+    display: flex;
+    margin: auto;
+    padding: 0 0 100px;
+  }
+  .button {
+    margin: 50px 0 0;
+    padding: 0 0 100px;
+  }
+  .users {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 16px;
+    }
+    @include tablet-pc {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+
+    .user {
+      width: 370px;
+      border-radius: 10px;
+      background: #fff;
+      @include desktop-sm {
+        width: 282px;
+      }
+      @include tablet {
+        margin: auto;
+        width: 344px;
+      }
+      @include mobile-m {
+        width: 328px;
+      }
+      &__info {
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        height: 214px;
+        img {
+          border-radius: 50%;
+        }
+        .name , .position , .email , .phone{
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 26px;
+          letter-spacing: 0em;
+          text-align: center;
+        }
+        .name {
+          margin: 14px 0 20px;
+        }
+      }
+    }
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    &__item {
+      margin: auto;
+      position: relative;
+
+    }
+    input {
+      margin: 0 auto 50px;
+      width: 346px;
+      font-size: 16px;
+      padding: 14px 16px;
+      border-radius: 4px;
+      border: 1px solid #D0CFCF;
+      background: #f9f9f9;
+      outline: none;
+      ~ span {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        color: #7E7E7E;
+        background: #f9f9f9;
+        transition: 0.2s ease all;
+      }
+      &:focus ~ span , &:not(:placeholder-shown) ~ span{
+        top: -8px;
+        bottom: 10px;
+        left: 20px;
+        font-size: 12px;
+        height: 17px;
+      }
+      @include mobile-m {
+        width: 294px;
+      }
+    }
+  }
+  .select {
+    width: 380px;
+    margin: auto;
+    padding: 0 0 50px 0;
+    position: relative;
+    @include mobile-m {
+      width: 335px;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      letter-spacing: 0em;
+      text-align: left;
+
+    }
+    &__position {
+      display: flex;
+      align-items: center;
+      &:last-of-type {
+        margin: 60px 0 0;
+      }
+      .input {
+        &__hidden {
+          position: absolute;
+          z-index: -1;
+        }
+      }
+      .custom-file-upload {
+        .upload {
+          padding: 14px 15px;
+          border: 1px solid #000;
+          border-radius: 4px 0 0 4px;
+        }
+      }
+      .file {
+        width: 300px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 0em;
+        border:1px solid #D0CFCF;
+        padding: 12px 0 11px;
+        border-radius: 0 4px 4px 0;
+        @include mobile-m {
+          width: 248px;
+        }
+        &__name {
+          margin: 0;
+        }
+        .upload {
+          &__no-item {
+            color: #7E7E7E;
+          }
+        }
+      }
+      span {
+        margin: 0 0 0 12px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+
+
+  }
+}

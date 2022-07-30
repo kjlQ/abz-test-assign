@@ -1,0 +1,31 @@
+.preloader {
+  width: 70px;
+}
+
+.tooltip {
+  display: inline-block;
+  cursor: pointer;
+  &:hover {
+    .tooltiptext {
+      visibility: visible;
+    }
+  }
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  font-size: 16px;
+  padding: 3px 16px;
+  top: 220px;
+  left: 65px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
