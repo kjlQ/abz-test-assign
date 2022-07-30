@@ -4,7 +4,7 @@ import axios from "axios";
 import SelectPosition from "./SelectPosition";
 import {getPos_token} from "../api/requests";
 import Form from "./Form";
-import success_img from '../assets/success-image.png'
+import success_img from '../assets/images/success-image.png'
 
 const PostRequest = ({registrationRef,setCreated,created}) => {
     const [positions,setPositions] = useState()
